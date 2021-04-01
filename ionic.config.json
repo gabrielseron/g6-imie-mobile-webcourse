@@ -1,0 +1,7 @@
+{
+  "name": "g6-imie-mobile-webcourse",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
