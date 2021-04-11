@@ -1,9 +1,49 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
 
+  <ion-row class="logo">
+    <ion-col size='12' class="ion-align-self-center">
+      <img src="assets/img/logo.png" alt="logo">
+      <h1 class="appName gradientText">App Name</h1>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="form">
+    <ion-col size='12'>
+
+      <ion-item class="username">
+        <ion-label position="floating" class="gradientText">Username</ion-label>
+        <ion-input type="text" class="gradientText"></ion-input>
+      </ion-item>
+
+      <ion-item class="email">
+        <ion-label position="floating" class="gradientText">Email</ion-label>
+        <ion-input type="email" class="gradientText"></ion-input>
+      </ion-item>
+
+      <ion-item class="password">
+        <ion-label position="floating" class="gradientText">Password</ion-label>
+        <ion-input type="password" class="gradientText"></ion-input>
+      </ion-item>
+
+      <ion-item class="repassword">
+        <ion-label position="floating" class="gradientText">Re-Password</ion-label>
+        <ion-input type="password" class="gradientText"></ion-input>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-button class="basicLogin" expand="block"><p class="androidLetterSpacing">Register</p></ion-button >
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-button class="google" expand="block"><ion-icon name="logo-google"></ion-icon><p class="androidLetterSpacing">Register with Google</p></ion-button>
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-button class="fb" expand="block"><ion-icon name="logo-facebook"></ion-icon><p class="androidLetterSpacing">Register with Facebook</p></ion-button>
+    </ion-col>
+  </ion-row>
+
+  <p class="registerTag">You already have any account ? <a routerLink="/login" class="gradientText">Login</a></p>
+  
 </ion-content>

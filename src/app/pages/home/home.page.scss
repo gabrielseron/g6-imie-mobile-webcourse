@@ -1,0 +1,51 @@
+ion-header
+{
+    ion-toolbar
+    {
+        ion-buttons
+        {
+
+          margin-right: 5%;
+            ion-icon
+            {
+              font-size: xx-large;
+            }
+        }
+    }
+}
+
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.gradientText
+{
+    background: -webkit-gradient(linear, left top, right bottom, from(#8A04ED), color-stop(0.25, #8A04ED), color-stop(0.5, #0094fc), color-stop(0.75, #00B297), to(#00B297));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

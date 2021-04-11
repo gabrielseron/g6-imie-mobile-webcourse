@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="close()">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [ngClass]="isCartEmpty ? 'hidden' : 'hidden'">
+  <p>yes</p>
+
+</ion-content>
+
+<!-- <ion-content>
+<p>no</p>
+
+</ion-content> -->
