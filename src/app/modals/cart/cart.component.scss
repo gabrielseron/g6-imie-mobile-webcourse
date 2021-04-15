@@ -34,10 +34,28 @@ ion-header
     display: none;
 }
 
-.logo
+.container
 {
     height: 40%;
     text-align: center;
+    margin-top: 30vw;
+}
+
+.container2 
+{
+    height: 40%;
+    text-align: center;
+    margin-top: -30vw;
+}
+
+.closeLink
+{
+    color: #0094fc !important;
+}
+
+.icon
+{
+    width: 35%;
 }
 
 .appName
@@ -62,12 +80,12 @@ ion-header
         margin-top: -10%;
     }
 
-    .basicLogin
+    .basicLogin 
     {
-        --background: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297);
-        --background-hover: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297);
-        --background-focused: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297);
-        --background-activated: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297);
+        --background: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297) !important;
+        --background-hover: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297) !important;
+        --background-focused: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297) !important;
+        --background-activated: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297) !important;
     }
 
 

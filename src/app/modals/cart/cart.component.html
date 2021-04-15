@@ -6,12 +6,28 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [ngClass]="isCartEmpty ? 'hidden' : 'hidden'">
-  <p>yes</p>
+
+// Show if isEmptyCart == true
+<ion-content [fullscreen]="true">
+
+  <ion-row class="container">
+    <ion-col>
+      <img src="assets/img/shadecart.svg" alt="cartIcon" class="icon">
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="container2">
+    <ion-col>
+      <p><strong class="closeLink">Your cart is empty</strong></p>
+      <p (click)="close()"><u class="closeLink">Start looking for your next course !</u></p>
+    </ion-col>
+  </ion-row>
 
 </ion-content>
 
-<!-- <ion-content>
-<p>no</p>
+// Show if isEmptyCart == false
+<ion-content class="hidden">
+  
+  // content of the cart
 
-</ion-content> -->
+</ion-content>

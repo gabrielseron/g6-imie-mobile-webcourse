@@ -1,0 +1,41 @@
+.header-md::after
+{
+    display: none;
+}
+
+ion-header
+{
+    ion-toolbar
+    {
+        --border-style: none;
+        padding: 2vw 2vw 0 0;
+        ion-searchbar
+        {
+            padding: 0 5vw;
+            --border-radius: 15vw;
+            --placeholder-color: #0094fc;
+            font-family: poppins-medium;
+        }
+        ion-buttons
+        {
+
+            margin-right: 5%;
+            ion-icon
+            {
+              font-size: xx-large;
+            }
+        }
+    }
+}
+
+
+
+
+
+.gradientText
+{
+    background: -webkit-gradient(linear, left top, right bottom, from(#8A04ED), color-stop(0.25, #8A04ED), color-stop(0.5, #0094fc), color-stop(0.75, #00B297), to(#00B297));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

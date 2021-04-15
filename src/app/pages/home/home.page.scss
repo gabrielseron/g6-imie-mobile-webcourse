@@ -1,16 +1,27 @@
+.header-md::after
+{
+    display: none;
+}
+
 ion-header
 {
     ion-toolbar
     {
-        ion-buttons
-        {
-
-          margin-right: 5%;
-            ion-icon
-            {
-              font-size: xx-large;
-            }
-        }
+      --border-style: none;
+      padding: 2vw 2vw 0 2vw;
+      ion-title
+      {
+        font-family: poppins-semibold;
+        font-size: large;
+      }
+      ion-buttons
+      {
+        margin-right: 5%;
+          ion-icon
+          {
+            font-size: xx-large;
+          }
+      }
     }
 }
 
@@ -42,7 +53,7 @@ ion-header
   text-decoration: none;
 }
 
-.gradientText
+.gradientText 
 {
     background: -webkit-gradient(linear, left top, right bottom, from(#8A04ED), color-stop(0.25, #8A04ED), color-stop(0.5, #0094fc), color-stop(0.75, #00B297), to(#00B297));
     background-clip: text;
