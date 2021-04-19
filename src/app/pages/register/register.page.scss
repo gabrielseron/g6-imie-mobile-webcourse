@@ -1,0 +1,95 @@
+.logo
+{
+    height: 40%;
+    text-align: center;
+}
+
+.appName
+{
+    font-size: xx-large;
+    font-family: poppins-semibold;
+    margin-top: -2%;
+}
+
+
+.form
+{
+    
+    padding: 0% 10%;
+    *
+    {
+        font-family: poppins-semibold;
+    }
+
+    .username
+    {
+        margin-top: -10%;
+    }
+
+    .basicLogin
+    {
+        --background: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297);
+        --background-hover: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297);
+        --background-focused: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297);
+        --background-activated: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297);
+    }
+
+    .google
+    {
+        --background: #4688F1;
+        --background-hover: #4688F1;
+        --background-focused: #4688F1;
+        --background-activated: #4688F1;
+    }
+
+    .fb
+    {
+        --background: #3B5998;
+        --background-hover: #3B5998;
+        --background-focused: #3B5998;
+        --background-activated: #3B5998;
+    }
+
+    ion-button
+    {
+        --border-color: #0094fc;
+        --border-radius: 15vw !important;
+        p
+        {
+            color: #ffffff !important;
+            font-size: small;
+        }
+        ion-icon
+        {
+            fill: white;
+            margin-right: 3%;
+        }
+    }
+}
+
+.registerTag
+{
+    text-align: center;
+    font-family: poppins-regular;
+    font-size: 4vw !important;
+    color: #363636;
+}
+
+.ios .registerTag
+{
+    margin-bottom: 10%;
+}
+
+.gradientText
+{
+    background: -webkit-gradient(linear, left top, right bottom, from(#8A04ED), color-stop(0.25, #0073ff), color-stop(0.5, #0094fc), color-stop(0.75, #00a7c4), to(#00B297));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.md .androidLetterSpacing
+{
+    letter-spacing: 0;
+    text-transform: capitalize
+}

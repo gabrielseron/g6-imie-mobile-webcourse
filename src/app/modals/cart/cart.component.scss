@@ -1,0 +1,128 @@
+.header-md::after
+{
+    display: none;
+}
+
+ion-header
+{
+    ion-toolbar
+    {
+
+        --border-style: none;
+
+        ion-buttons
+        {
+            ion-icon
+            {
+                font-size: xx-large;
+            }
+        }
+    }
+}
+
+.form
+{
+    .text
+    {
+        // padding-top: -10%;
+        text-align: center;
+    }
+}
+
+.hidden
+{
+    display: none;
+}
+
+.container
+{
+    height: 40%;
+    text-align: center;
+    margin-top: 30vw;
+}
+
+.container2 
+{
+    height: 40%;
+    text-align: center;
+    margin-top: -30vw;
+}
+
+.closeLink
+{
+    color: #0094fc !important;
+}
+
+.icon
+{
+    width: 35%;
+}
+
+.appName
+{
+    font-size: xx-large;
+    font-family: poppins-semibold;
+    margin-top: -2%;
+}
+
+
+.form
+{
+    
+    padding: 0% 10%;
+    *
+    {
+        font-family: poppins-semibold;
+    }
+
+    .emailContainer
+    {
+        margin-top: -10%;
+    }
+
+    .basicLogin 
+    {
+        --background: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297) !important;
+        --background-hover: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297) !important;
+        --background-focused: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297) !important;
+        --background-activated: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297) !important;
+    }
+
+
+    ion-button
+    {
+        --border-color: #0094fc;
+        --border-radius: 15vw !important;
+        p
+        {
+            color: #ffffff !important;
+            font-size: small;
+        }
+        ion-icon
+        {
+            fill: white;
+            margin-right: 3%;
+        }
+    }
+}
+
+.gradientText
+{
+    background: -webkit-gradient(linear, left top, right bottom, from(#8A04ED), color-stop(0.25, #0073ff), color-stop(0.5, #0094fc), color-stop(0.75, #00a7c4), to(#00B297));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.md .androidLetterSpacing
+{
+    letter-spacing: 0;
+    text-transform: capitalize
+}
+
+ion-toast.mailSentToast
+{
+    text-align: center !important;
+    font-family: poppins-regular !important;
+    --background: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297);
+}
