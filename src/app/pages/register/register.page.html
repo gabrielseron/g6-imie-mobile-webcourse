@@ -12,27 +12,27 @@
 
       <ion-item class="username">
         <ion-label position="floating" class="gradientText">Username</ion-label>
-        <ion-input type="text" class="gradientText"></ion-input>
+        <ion-input type="text" class="gradientText" [(ngModel)]="user.nom"></ion-input>
       </ion-item>
 
       <ion-item class="email">
         <ion-label position="floating" class="gradientText">Email</ion-label>
-        <ion-input type="email" class="gradientText"></ion-input>
+        <ion-input (keydown)="checkEmail()" type="email" class="gradientText" [(ngModel)]="user.email"></ion-input>
       </ion-item>
 
       <ion-item class="password">
         <ion-label position="floating" class="gradientText">Password</ion-label>
-        <ion-input type="password" class="gradientText"></ion-input>
+        <ion-input type="password" class="gradientText" [(ngModel)]="user.password"></ion-input>
       </ion-item>
 
       <ion-item class="repassword">
         <ion-label position="floating" class="gradientText">Re-Password</ion-label>
-        <ion-input type="password" class="gradientText"></ion-input>
+        <ion-input type="password" class="gradientText" [(ngModel)]="user.confirm_Password"></ion-input>
       </ion-item>
     </ion-col>
 
     <ion-col size="12">
-      <ion-button class="basicLogin" expand="block"><p class="androidLetterSpacing">Register</p></ion-button >
+      <ion-button [disabled]="isErrorMail || user.confirm_Password.trim() != user.password.trim() || !user.confirm_Password.trim() || user.confirm_Password.trim().length < 5 || user.nom.trim().length < 5" (click)="register()" class="basicLogin" expand="block"><p class="androidLetterSpacing">Register</p></ion-button >
     </ion-col>
 
     <ion-col size="12">
