@@ -11,6 +11,7 @@ export class ForgotPasswordComponent implements OnInit
 
   @Input() emailer:string;
   isErrorMail: boolean = true;
+  email: string = '';
 
   constructor(private modal: ModalController, private toast: ToastController) { }
 
@@ -19,15 +20,14 @@ export class ForgotPasswordComponent implements OnInit
 
   }
 
-  emailCheck: string = '';
 
   checkEmail() 
   {
     const regex = new RegExp(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g);
     // this.isErrorMail = !regex.test(this.email);
-    console.log(this.emailCheck);
-    console.log(regex.test(this.emailCheck.trim()));
-    this.isErrorMail = (regex.test(this.emailCheck.trim())) ? false : true;
+    console.log(this.emailer);
+    console.log(regex.test(this.emailer.trim()));
+    this.isErrorMail = (regex.test(this.emailer.trim())) ? false : true;
   }
 
   close()
@@ -40,13 +40,24 @@ export class ForgotPasswordComponent implements OnInit
 
   async presentToast() 
   {
-    const toast = await this.toast.create({
-      message: 'A mail has been sent',
-      duration: 2000,
-      keyboardClose: true,
-      cssClass: 'mailSentToast',
-    });
-    toast.present();
-    this.close();
+    this.checkEmail()
+    if (this.isErrorMail == true) {
+      const toast = await this.toast.create({
+        message: 'Mail is incorrect',
+        duration: 2000,
+        keyboardClose: true,
+        cssClass: 'mailSentToast',
+      });
+      toast.present();
+    } else {
+      const toast = await this.toast.create({
+        message: 'A mail has been sent',
+        duration: 2000,
+        keyboardClose: true,
+        cssClass: 'mailSentToast',
+      });
+      toast.present();
+      this.close();
+    }
   }
 }
