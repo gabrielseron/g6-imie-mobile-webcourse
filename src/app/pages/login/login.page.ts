@@ -37,7 +37,7 @@ export class LoginPage implements OnInit
         }
         console.log(token);
         if (token !== undefined && token !== null)
-            this.router.navigate(['/tabs'])
+            this.router.navigate(['/tab'])
   }
 
   async forgotPassword()
