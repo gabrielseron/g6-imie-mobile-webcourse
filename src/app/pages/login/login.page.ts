@@ -74,7 +74,7 @@ export class LoginPage implements OnInit
       }
         await this.loading.dismiss();
       
-        this.router.navigate(['/tabs'])
+        this.router.navigate(['/tab'])
     }).catch(async() => {
         this.userName = ''
         this.password = '';
