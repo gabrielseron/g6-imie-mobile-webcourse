@@ -52,34 +52,35 @@ export class LoginPage implements OnInit
       return await modal.present();
   }
 
-  async loginForm() {
+  async loginForm() 
+  {
     const load = await this.loading.create({
         message: 'Please wait...',
-        
+
     });
     await load.present();
-    
-   
-    this.auth.login(this.userName,this.password ).then(async(user: any) => {
-      
-        console.log(this.platform.platforms());
-        if (this.platform.is("desktop")) {
-          console.log('err') 
-          localStorage.setItem('token', user.token)
-          localStorage.setItem('user', JSON.stringify(user.user))
-      } else {
-      
-            await this.storage.setItem('token', user.token)
-            await this.storage.setItem('user', JSON.stringify(user.user))
+
+    this.auth.loginer(this.userName,this.password ).then(async(user: any) =>
+    {
+      console.log(this.userName);
+      console.log(this.password);
+      console.log(this.platform.platforms());
+      if (this.platform.is("desktop"))
+      {
+        localStorage.setItem('token', user.token)
+        localStorage.setItem('user', JSON.stringify(user.user))
+      } else
+      {
+        await this.storage.setItem('token', user.token)
+        await this.storage.setItem('user', JSON.stringify(user.user))
       }
-        await this.loading.dismiss();
-      
+      await this.loading.dismiss();
         this.router.navigate(['/tab'])
     }).catch(async() => {
         this.userName = ''
         this.password = '';
         await this.loading.dismiss();
     })
-}
+  }
 
 }
