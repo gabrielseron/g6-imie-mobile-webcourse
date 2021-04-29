@@ -1,4 +1,4 @@
-export interface UserRegister 
+export interface UserRegister  
 {
   nom : string;
   email: string,

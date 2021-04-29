@@ -11,13 +11,13 @@ export class AuthService
 {
   
   // online url
-  // url: string = "https://cda-g6.eu-4.evennode.com" 
+   //url: string = "https://cericoil-14740.nodechef.com" 
 
   // offline url
  url: string = "http://localhost:5233"
 userName='';
 password='';
-  
+
   constructor
   (
     private http:HttpClient
@@ -38,9 +38,9 @@ password='';
     login(userName: string, password: string) {
       return new Promise((resolve, rejects) => {
      
-       
-       console.log(userName,password);
-          this.http.post(this.url +'/auth/login/', { userName: userName, password: password }).subscribe((data: any) => {
+        
+       console.log(userName,password)
+          this.http.post(this.url +'/auth/login/', { userName: userName, password: password}, ).subscribe((data: any) => {
               
               (!data.success) ? rejects(false): resolve(data);
           });

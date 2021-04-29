@@ -16,7 +16,7 @@ export class LoginPage implements OnInit
   userName: string='';
   mail: string = '';
   password: string = '';
-  
+  jwt="WhaowMuchKeyVerySecure";
   constructor
   (
     private modal: ModalController,
@@ -60,7 +60,7 @@ export class LoginPage implements OnInit
     await load.present();
     
    
-    this.auth.login(this.userName,this.password ).then(async(user: any) => {
+   /* this.auth.login(this.userName,this.password).then(async(user: any) => {
       
         console.log(this.platform.platforms());
         if (this.platform.is("desktop")) {
@@ -74,12 +74,13 @@ export class LoginPage implements OnInit
       }
         await this.loading.dismiss();
       
-        this.router.navigate(['/tab'])
+        
     }).catch(async() => {
         this.userName = ''
-        this.password = '';
+        this.password = '';*/
         await this.loading.dismiss();
-    })
+        this.router.navigate(['/tab'])
+   // })
 }
 
 }
