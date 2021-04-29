@@ -12,33 +12,33 @@
 <ion-content>
   <ion-row class="logo">
     <ion-col size='12' class="ion-align-self-center">
-      <img (click)="changePic()" src="assets/img/placeholderPerson.svg" alt="logo">
-      <h1 class="username gradientText">Username</h1> <!-- value == username -->
+      <img src="assets/img/placeholderPerson.svg" alt="logo">
+      <h1 class="username gradientText" [innerHTML]="username"></h1> <!-- value == username -->
     </ion-col>
   </ion-row>
 
   <ion-list>
-    <h4>Option menu 1</h4>
-    <ion-item (click)="openModalX()">
-      <ion-label>Option 1</ion-label>
+    <h4>General</h4>
+    <ion-item  (click)="deleteCourses()">
+      <ion-label>Clear all courses</ion-label>
       <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
-    </ion-item>
-    <ion-item (click)="openModalX()">
-      <ion-label>Option 2</ion-label>
-      <ion-icon slot="end" name="chevron-forward-outline"> </ion-icon>
     </ion-item>
   </ion-list>
 
   <ion-list>
-    <h4>Option menu 2</h4>
-    <ion-item>
-      <ion-label (click)="mytoggle.checked = !mytoggle.checked">Option 3</ion-label>
-      <ion-toggle #mytoggle slot="end"></ion-toggle>
+    <h4>Legal Informations</h4>
+    <ion-item (click)="about('about')">
+      <ion-label>About Cericoil</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"> </ion-icon>
     </ion-item>
-    <ion-item>
-      <ion-label (click)="mytoggle2.checked = !mytoggle2.checked">Option 4</ion-label>
-      <ion-toggle #mytoggle2 slot="end"></ion-toggle>
+    <ion-item (click)="intelProperty('intelProperty')">
+      <ion-label>Intellectual Property Policy</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
     </ion-item>
   </ion-list>
+
+  <ion-col size="12">
+    <ion-button class="logout" (click)="logout()" expand="block"><p class="androidLetterSpacing">Log Out</p></ion-button>
+  </ion-col>
 
 </ion-content>

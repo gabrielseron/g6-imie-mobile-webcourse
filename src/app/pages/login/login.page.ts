@@ -60,7 +60,7 @@ export class LoginPage implements OnInit
     });
     await load.present();
 
-    this.auth.loginer(this.userName,this.password ).then(async(user: any) =>
+    this.auth.login(this.userName,this.password ).then(async(user: any) =>
     {
       console.log(this.userName);
       console.log(this.password);

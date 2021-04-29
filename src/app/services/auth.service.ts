@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {​​ HttpClient}​​ from '@angular/common/http';
+import {​​ HttpClient }​​ from '@angular/common/http';
 import { UserRegister } from '../interfaces/user-register';
 
 
@@ -12,16 +12,18 @@ export class AuthService
 
   constructor
   (
-    private http: HttpClient
+    private http: HttpClient,
   ){ }
 
     register(user: UserRegister)
     { 
+      console.log(user);
       return new Promise((resolve, rejects) => 
       {
-        this.http.post(this.url +'/auth/register', user).subscribe((data: any) => 
+        this.http.post(this.url +'/auth/register/', user).subscribe((data: any) => 
         {
-            (!data.success) ? rejects(data.message): resolve(data);
+          
+            (!data.message) ? rejects(data.message): resolve(data);
         });
       });
     }
@@ -38,26 +40,11 @@ export class AuthService
           this.http.post(this.url +'/auth/login/', { userName: userName, password: password}).subscribe((data: any) => {
               
           if (!data.token)
-            rejects (false)
+            rejects (data.message)
           else
             resolve (data)
           });
       });
-  };
-
-  loginer(userName:string, password:string)
-  {
-    return new Promise((resolve, rejects)=>
-    {
-      this.http.post(this.url + '/auth/login', {userName: userName, password: password}).subscribe((data: any)=>
-      {
-        console.log(data);
-        if (!data.success)
-            rejects (false)
-        else
-            resolve (data)
-      });
-    });
   };
 
 }

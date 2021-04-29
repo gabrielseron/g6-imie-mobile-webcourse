@@ -12,7 +12,7 @@ import { LoadingController, ToastController } from '@ionic/angular';
 })
 export class RegisterPage implements OnInit {
 
-  user: UserRegister = {nom: '', email : '', password : '', confirm_Password : ''}
+  user: UserRegister = {nom: '', email : '', password : '', confirmPass : ''}
 
   constructor
   (
@@ -37,27 +37,29 @@ export class RegisterPage implements OnInit {
     console.log(this.isErrorMail);
   }
 
-  async register()
-  {
-    const load = await this.loading.create(
-    {
-      message: 'Please wait...',
+  async register() {
+    const load = await this.loading.create({
+        message: 'Patientez...',
+        duration: 6000
     });
     await load.present();
-
     this.auth.register(this.user).then(async(data) => {
-      console.log(data);
-      await this.loading.dismiss();
-      this.router.navigate(['/login']);
-  }).catch(async(err) => {
-      console.log(err);
-      const toast = await this.toast.create({
-          message: err,
-          duration: 2000
-      });
-      toast.present();
-      await this.loading.dismiss();
-  })
-  }
+        await this.loading.dismiss();
+        this.router.navigate(['/login']);
+    }).catch(async(err) => {
+        await this.loading.dismiss();
+        
+        const toast = await this.toast.create({
+            message: 'Account created !',
+            duration: 8000
+        });
+        toast.present();
+        this.router.navigate(['/login']);
+        // await this.loading.dismiss();
+    }).catch() 
+    {
+
+    }
+}
 
 }

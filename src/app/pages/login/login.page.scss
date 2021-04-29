@@ -19,7 +19,7 @@
 .form
 {
     
-    padding: 0% 10%;
+    padding: 15% 10%;
     *
     {
         font-family: poppins-semibold;
@@ -38,21 +38,6 @@
         --background-activated: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297);
     }
 
-    .google
-    {
-        --background: #4688F1;
-        --background-hover: #4688F1;
-        --background-focused: #4688F1;
-        --background-activated: #4688F1;
-    }
-
-    .fb
-    {
-        --background: #3B5998;
-        --background-hover: #3B5998;
-        --background-focused: #3B5998;
-        --background-activated: #3B5998;
-    }
 
     .forgot
     {
