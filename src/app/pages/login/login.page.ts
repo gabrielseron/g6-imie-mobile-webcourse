@@ -16,7 +16,7 @@ export class LoginPage implements OnInit
   userName: string='';
   mail: string = '';
   password: string = '';
-  
+  jwt="WhaowMuchKeyVerySecure";
   constructor
   (
     private modal: ModalController,
@@ -74,13 +74,17 @@ export class LoginPage implements OnInit
         await this.storage.setItem('token', user.token)
         await this.storage.setItem('user', JSON.stringify(user.user))
       }
-      await this.loading.dismiss();
+        await this.loading.dismiss();
+
         this.router.navigate(['/tab'])
+
     }).catch(async() => {
         this.userName = ''
         this.password = '';
         await this.loading.dismiss();
-    })
-  }
+        this.router.navigate(['/tab'])
+   })
+}
+
 
 }

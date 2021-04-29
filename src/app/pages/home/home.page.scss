@@ -34,14 +34,21 @@ ion-header
   top: 50%;
   transform: translateY(-50%);
 }
+ion-content{
+  margin-top: 3%;
+  .row{
+  margin-bottom: -12%;
 
+  }
+  
+}
 #container strong {
   font-size: 20px;
   line-height: 26px;
 }
 
 #container p {
-  font-size: 16px;
+  font-size: 12px;
   line-height: 22px;
 
   color: #8c8c8c;
@@ -49,6 +56,44 @@ ion-header
   margin: 0;
 }
 
+.categorieName{
+  margin-bottom: -20px;
+  font-size: 15px;
+  background: -webkit-gradient(linear, left top, right bottom, from(#8A04ED), color-stop(0.25, #8A04ED), color-stop(0.5, #0094fc), color-stop(0.75, #00B297), to(#00B297));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.cardCourse{
+  width:95%;
+  height: 160px;;
+  font-size:9px;
+  text-align: center;
+  
+  
+  .title-note{
+    margin-top:-25%;
+  }
+  .imageCourse{
+    width:100%;
+    img{
+      width:96%;
+       border-radius: 5%;
+      border:solid linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297) 2px; 
+    }
+    height:70px;
+    
+   
+    
+
+  }
+  img{
+    object-fit: cover;
+    width:100%;
+    transform :scale(1.1,1.1) rotate (1deg);
+    transition: 600ms all ease-in-out;
+  }
+}
 #container a {
   text-decoration: none;
 }

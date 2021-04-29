@@ -8,7 +8,14 @@ import { UserRegister } from '../interfaces/user-register';
 })
 export class AuthService 
 {
-   url: string = "https://cericoil-14740.nodechef.com"
+  
+  // online url
+   //url: string = "https://cericoil-14740.nodechef.com" 
+
+  // offline url
+ url: string = "http://localhost:5233"
+userName='';
+password='';
 
   constructor
   (

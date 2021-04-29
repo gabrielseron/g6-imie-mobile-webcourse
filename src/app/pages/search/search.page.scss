@@ -2,7 +2,9 @@
 {
     display: none;
 }
-
+.pTheme{
+    font-size: small;
+}
 ion-header
 {
     ion-toolbar
@@ -28,9 +30,45 @@ ion-header
     }
 }
 
+.title-section
+{
+    margin-top:22%;
+}
+.cardCourse{
+    width:95%;
+    height: auto;
+    font-size:9px;
+    text-align: center;
+    border : 1mm ridge black;
+    margin-top: 6px; 
+    
+    
+    .imageCourse{
+      width:45%;
+      
+      img{
+        width:96%;
+         border-radius: 5%;
+        
+      }
+      height:70px;
 
-
-
+    }
+}
+.categorieName{
+    font-size: 12px!important;
+   border:2px solid black;
+   width:100%;
+    margin-top: 3%;
+  text-align: center;
+}
+.noteCourse
+{
+    width:20%;
+    margin-top:-256px;
+    margin-left: 55%;
+   
+}
 
 .gradientText
 {
