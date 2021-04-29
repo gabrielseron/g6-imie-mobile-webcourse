@@ -52,10 +52,11 @@ export class LoginPage implements OnInit
       return await modal.present();
   }
 
-  async loginForm() {
+  async loginForm() 
+  {
     const load = await this.loading.create({
         message: 'Please wait...',
-        
+
     });
     await load.present();
     
