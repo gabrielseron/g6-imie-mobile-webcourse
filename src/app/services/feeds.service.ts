@@ -14,7 +14,7 @@ export class FeedsService {
         items = items.courses;
         console.log(items);
         let courses: CourseFeed[] = []
-        for (let item of items) {
+        for (const item of items) {
           courses.push({
             category:item.category,
             nameCourse: item.category.course.title,

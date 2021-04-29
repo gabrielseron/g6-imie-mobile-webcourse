@@ -41,8 +41,7 @@ password='';
     login(userName: string, password: string) 
     {
       return new Promise((resolve, rejects) => {
-     
-       
+
           console.log(userName,password);
           this.http.post(this.url +'/auth/login/', { userName: userName, password: password}).subscribe((data: any) => {
               
