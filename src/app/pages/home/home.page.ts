@@ -31,6 +31,10 @@ export class HomePage implements OnInit {
 
 
   }
+
+ 
+
+
   async displayCart()
   {
     const modal = await this.modal.create(
