@@ -73,8 +73,9 @@ export class LoginPage implements OnInit
             await this.storage.setItem('user', JSON.stringify(user.user))
       }
         await this.loading.dismiss();
-      
-        
+
+        this.router.navigate(['/tab'])
+
     }).catch(async() => {
         this.userName = ''
         this.password = '';*/
