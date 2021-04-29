@@ -10,10 +10,10 @@ export class AuthService
 {
   
   // online url
-   //url: string = "https://cericoil-14740.nodechef.com" 
+   url: string = "https://cericoil-14740.nodechef.com" 
 
   // offline url
- url: string = "http://localhost:5233"
+ //url: string = "http://localhost:5233"
 userName='';
 password='';
 
