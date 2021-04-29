@@ -18,7 +18,10 @@ export class FeedsService {
           courses.push({
             category:item.category,
             nameCourse: item.category.course.title,
-            nameCategory:item.category.name
+            nameCategory:item.category.name,
+            id:item.category.id,
+            name: item.category.name,
+            situation: item.category.course.situation
           })
         }
         console.log(courses);

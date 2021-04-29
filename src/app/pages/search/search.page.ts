@@ -22,7 +22,9 @@ export class SearchPage implements OnInit {
   //cart=[];
   //cartItemCount: BehaviorSubject<number>;
   constructor
-    (private platform: Platform, private storage: NativeStorage,private modal: ModalController, private router: Router, private route: ActivatedRoute, private feed: FeedsService) { }
+    (
+      private modal: ModalController, private router: Router, private route: ActivatedRoute, private feed: FeedsService, private platform: Platform, private storage: NativeStorage,
+    ) { }
 
 
   async ngOnInit() {
@@ -51,11 +53,23 @@ export class SearchPage implements OnInit {
 
     this.router.events.subscribe(async (event) => {
       if (event instanceof NavigationEnd) {
-        this.feeds = (this.route.snapshot.data.json) ? await this.feed.getDataBJson() : await this.feed.getDataBJson();
-        ;
-
-      }
+        this.feeds = (this.route.snapshot.data.json) ? await this.feed.getDataBJson() : await this.feed.getDataBJson();}
     });
+  }
+
+  async addToCart(idCourse: number)
+  {
+    console.log(this.feeds[idCourse]);
+    if (this.platform.is("desktop"))
+      {
+        localStorage.setItem('course'+ idCourse + "id", JSON.stringify(this.feeds[idCourse]))
+      } else
+      {
+        await this.storage.setItem('course'+ idCourse + "id", JSON.stringify(this.feeds[idCourse]))
+      }
+
+      console.log(this.feeds[0].id);
+      
   }
 
 

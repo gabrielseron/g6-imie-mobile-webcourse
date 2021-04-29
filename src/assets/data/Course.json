@@ -35,16 +35,10 @@
     "courses": [
         {
             "category": {
-                "id": null,
+                "id": 0,
                 "name": "devellopement web",
                 "course": {
-                    "theme":{
-                        "theme1":"python",
-                        "theme2":"jeux-video",
-                        "theme3":"informatique"
-                    },
-                    "situation":0,
-                    "amount":"0",
+                    "situation": 0,
                     "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/f1sy0dbofng1lbz3hq4u.png",
                     "author": "Graven - Développement",
                     "title": "Apprendre à creer un site internet",
@@ -121,11 +115,11 @@
         },
         {
             "category": {
-                "id": null,
+                "id": 1,
                 "name": "jeu video",
                 "situation":0,
                 "course": {
-                    "amount":"",
+                    "situation": 0,
                     "author": "Graven - Développement",
                     "title": "creer un jeu PYGAME- PYTHON",
                     "description": "apprendre a créer un jeu avec python? rien de plus simple avec ce tutoriel de 5h vous permettant de voir les fondamentaux et de les approfondir ",
@@ -212,11 +206,10 @@
         },
         {
             "category": {
-                "id": null,
-                "situation":0,
+                "id": 2,
                 "name": "jeu video",
                 "course": {
-                    "amount":0,
+                    "situation": 0,
                     "author": "Graven - Développement",
                     "title": "creer un jeu PYGAME- PYTHON",
                     "description": "apprendre a créer un jeu avec python? rien de plus simple avec ce tutoriel de 5h vous permettant de voir les fondamentaux et de les approfondir ",
