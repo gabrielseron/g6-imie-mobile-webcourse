@@ -3,3 +3,7 @@ export interface CourseFeed {
     nameCourse?:string
     nameCategory:string
 }
+
+export interface ThemesFeed{
+    name?:string;
+}

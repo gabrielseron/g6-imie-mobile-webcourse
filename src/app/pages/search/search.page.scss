@@ -29,6 +29,44 @@ ion-header
         }
     }
 }
+.cart-lenght
+{
+    color:black;
+    position:absolute;
+    top:18px;
+    left:25px;
+    font-weight: 600;
+    font-size:130px;
+    min-width:25px;
+    z-index:10;
+}
+.theme{
+    margin-top:20px;
+    .themerow
+    {
+        margin-left: 4%;
+        justify-content: center;
+        ion-col{
+           background-color:rgb(235, 235, 235); 
+           margin-right: 6px;
+            height:90%;
+       
+           border-radius: 234PX;
+            .nameTheme{
+           
+
+                font-size:13px;
+                justify-content: center;
+              
+            }  
+        
+        }
+          
+
+        
+    }
+}
+
 
 .title-section
 {
