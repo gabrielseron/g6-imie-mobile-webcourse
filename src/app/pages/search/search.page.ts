@@ -29,7 +29,7 @@ export class SearchPage implements OnInit {
 
   async ngOnInit() {
     this.themes = await this.feed.getThemeBJson()
-
+    this.feeds = await this.feed.getDataBJson()
   }
 
   async FilterJSONData(ev: any) {
@@ -57,21 +57,6 @@ export class SearchPage implements OnInit {
     });
   }
 
-  async addToCart(idCourse: number)
-  {
-    console.log(this.feeds[idCourse]);
-    if (this.platform.is("desktop"))
-      {
-        localStorage.setItem('course'+ idCourse + "id", JSON.stringify(this.feeds[idCourse]))
-      } else
-      {
-        await this.storage.setItem('course'+ idCourse + "id", JSON.stringify(this.feeds[idCourse]))
-      }
-
-      console.log(this.feeds[0].id);
-      
-  }
-
 
 //list of themes
 iontheme() {
@@ -93,4 +78,11 @@ iontheme() {
     return await modal.present();
   }
 
+
+  async addToCart(id: number)
+  {
+    
+    await localStorage.setItem('TB_' + JSON.stringify(this.feeds[0].name), JSON.stringify(this.feeds[0]))
+    await localStorage.setItem('TB_' + JSON.stringify(this.feeds[1].name), JSON.stringify(this.feeds[1]))
+  }
 }
