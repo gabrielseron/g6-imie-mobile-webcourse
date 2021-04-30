@@ -4,7 +4,7 @@ import { CartComponent } from '../../modals/cart/cart.component';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { FeedsService } from '../../services/feeds.service';
 import { CourseFeed,ThemesFeed } from '../../interfaces/course-feed';
-import{BehaviorSubject} from "rxjs";
+
 
 import { Platform } from '@ionic/angular';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
@@ -23,7 +23,7 @@ export class SearchPage implements OnInit {
   //cartItemCount: BehaviorSubject<number>;
   constructor
     (
-      private modal: ModalController, private router: Router, private route: ActivatedRoute, private feed: FeedsService, private platform: Platform, private storage: NativeStorage,
+      private modal: ModalController, private router: Router, private route: ActivatedRoute, private feed: FeedsService, private platform: Platform, private storage: NativeStorage
     ) { }
 
 
@@ -32,6 +32,8 @@ export class SearchPage implements OnInit {
     this.feeds = await this.feed.getDataBJson()
   }
 
+  
+  
   async FilterJSONData(ev: any) {
     this.feeds = await this.feed.getDataBJson()
     this.ionViewWillEnter();
@@ -53,7 +55,9 @@ export class SearchPage implements OnInit {
 
     this.router.events.subscribe(async (event) => {
       if (event instanceof NavigationEnd) {
-        this.feeds = (this.route.snapshot.data.json) ? await this.feed.getDataBJson() : await this.feed.getDataBJson();}
+        this.feeds = (this.route.snapshot.data.json) ? await this.feed.getDataBJson() : await this.feed.getDataBJson();
+        console.log(this.feeds)
+      }
     });
   }
 
@@ -65,7 +69,6 @@ iontheme() {
   this.router.events.subscribe(async (event) => {
     if (event instanceof NavigationEnd) {
       this.themes = (this.route.snapshot.data.json) ? await this.feed.getThemeBJson() : await this.feed.getThemeBJson();
-      ;
 
     }
   });

@@ -38,6 +38,7 @@
                 "id": 0,
                 "name": "devellopement web",
                 "course": {
+                    "id": 0,
                     "situation": 0,
                     "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/f1sy0dbofng1lbz3hq4u.png",
                     "author": "Graven - Développement",
@@ -119,6 +120,7 @@
                 "name": "jeu video",
                 "situation":0,
                 "course": {
+                    "id": 1,
                     "situation": 0,
                     "author": "Graven - Développement",
                     "title": "creer un jeu PYGAME- PYTHON",
@@ -209,6 +211,7 @@
                 "id": 2,
                 "name": "jeu video",
                 "course": {
+                    "id": 2,
                     "situation": 0,
                     "author": "Graven - Développement",
                     "title": "creer un jeu PYGAME- PYTHON",
