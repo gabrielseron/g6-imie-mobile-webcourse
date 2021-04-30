@@ -11,26 +11,29 @@
 
 
 <ion-content [fullscreen]="true">
+  <img class='imgPromo' src='assets/img/BlackFriday.svg'>
+
   <ion-row class="row" *ngFor="let feed of feeds">
     <ion-title class='categorieName'>{{feed.category.name}}</ion-title>
+
     <ion-slides [options]="option" class="ion-margin-top">
       <ion-slide>
 
-        <ion-row class="cardCourse" routerLink="./item-details" routerDirection="forward">
-        <ion-row>
-          <ion-col class="imageCourse">
-            <img [src]="feed.category.course.urlToImage" />
-          </ion-col>
+        <ion-row class="cardCourse" (click)="detail(feed.category.course)">
+          <ion-row>
+            <ion-col class="imageCourse">
+              <img [src]="feed.category.course.urlToImage" />
+            </ion-col>
 
-        </ion-row>
-        <ion-row class="title-note">
-          <ion-col>
-            <p class='titleCourse'>{{feed.category.course.title}}</p>
-          </ion-col>
-          <ion-col>
-            <img class="noteCourse" [src]="feed.category.course.urlNotation" />
-          </ion-col>
-</ion-row>
+          </ion-row>
+          <ion-row class="title-note">
+            <ion-col>
+              <p class='titleCourse'>{{feed.category.course.title}}</p>
+            </ion-col>
+            <ion-col>
+              <img class="noteCourse" [src]="feed.category.course.urlNotation" />
+            </ion-col>
+          </ion-row>
         </ion-row>
 
 

@@ -19,7 +19,7 @@ export class HomePage implements OnInit {
 }
 
   ionViewWillEnter() {
-    console.log("ionViewWillEnter");
+
 
     this.router.events.subscribe(async(event) => {
         if (event instanceof NavigationEnd) {
@@ -33,7 +33,11 @@ export class HomePage implements OnInit {
   }
 
  
+  detail(idFeed){
 
+    
+    this.router.navigate(['/item-details/'+(JSON.stringify(idFeed.id))]);
+  }
 
   async displayCart()
   {

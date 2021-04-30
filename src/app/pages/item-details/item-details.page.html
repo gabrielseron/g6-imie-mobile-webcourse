@@ -1,9 +1,35 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>item-details</ion-title>
+
+    <ion-toolbar>
+      <ion-buttons slot="start" routerLink="/tab" routerDirection="back" >
+        
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-buttons>
+      <ion-title>item-details</ion-title>
+    </ion-toolbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+ 
+<ion-row *ngFor="let feed of feeds">
 
+  <ion-row class="cardCourse">
+
+    <ion-col class="imageCourse">
+      <img [src]="feed.category.course.urlToImage" />
+    </ion-col>
+
+    <ion-col>
+      <p class='titleCourse'>{{feed.category.course.title}}</p>
+    </ion-col>
+    <ion-row>
+      <ion-col>
+        <img class="noteCourse" [src]="feed.category.course.urlNotation" />
+      </ion-col>
+    </ion-row>
+  </ion-row>
+
+</ion-row>
 </ion-content>

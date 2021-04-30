@@ -13,8 +13,8 @@ import { CourseFeed } from '../../interfaces/course-feed';
 export class CartComponent implements OnInit {
 
   isCartEmpty: boolean = true;
-  private localStorageLength: number
-  public cartContent: object[] =[]
+  private localStorageLength: number;
+  public cartContent: CourseFeed[] =[]
   public cartContentKeys: string[] =[]
 
   constructor
@@ -49,12 +49,14 @@ export class CartComponent implements OnInit {
       console.log(this.cartContentKeys[j]);
       console.log(JSON.parse(localStorage.getItem(this.cartContentKeys[j])));
       this.cartContent.push(JSON.parse(localStorage.getItem(this.cartContentKeys[j])))
-      
+ 
+     // this.cartContent[0].category.name
+
       // console.log(JSON.parse(localStorage.getItem(this.cartContentKeys[j])).category.course.urlToImage);
       j++
     }
-    console.log(this.cartContent);
-    
+   
+         console.log(JSON.stringify(this.cartContent[0].name));
     
     // for (let i = 0; i < this.localStorageLength; i++) 
     // {

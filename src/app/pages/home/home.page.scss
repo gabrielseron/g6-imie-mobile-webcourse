@@ -55,9 +55,17 @@ ion-content{
 
   margin: 0;
 }
+.imgPromo{
+  width:90%;
+  height:30%;
+  margin-left:6%;
+  border-radius: 10px;
+  background-color: rgb(247, 233, 215);
+ 
 
+}
 .categorieName{
-  margin-bottom: -20px;
+margin-top: 20px;
   font-size: 15px;
   background: -webkit-gradient(linear, left top, right bottom, from(#8A04ED), color-stop(0.25, #8A04ED), color-stop(0.5, #0094fc), color-stop(0.75, #00B297), to(#00B297));
     background-clip: text;
