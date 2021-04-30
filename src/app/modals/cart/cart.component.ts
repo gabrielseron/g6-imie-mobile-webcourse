@@ -16,6 +16,7 @@ export class CartComponent implements OnInit {
   private localStorageLength: number;
   public cartContent: CourseFeed[] =[]
   public cartContentKeys: string[] =[]
+  deviceType;
 
   constructor
   (
@@ -24,20 +25,32 @@ export class CartComponent implements OnInit {
 
   async ngOnInit()
   {
+    this.findDeviceType()
     await this.getAddedCourses()
     //console.log(this.addedCourseList);
   }
 
+  findDeviceType()
+  {
+    if (this.platform.is("desktop"))
+      {
+        this.deviceType = this.deviceType
+      } else
+      {
+        this.deviceType = this.storage
+      }
+  }
+
   getAddedCourses()
   {
-    this.localStorageLength = localStorage.length
+    this.localStorageLength = this.deviceType.length
     var i: number = 0
     while (i < this.localStorageLength) 
     {
       console.log(localStorage.key(i));
-      if (localStorage.key(i).startsWith("TB_")) 
+      if (this.deviceType.key(i).startsWith("TB_")) 
       {
-        this.cartContentKeys.push(localStorage.key(i))
+        this.cartContentKeys.push(this.deviceType.key(i))
       }
       // this.cartContent.push(object)
       i++
@@ -47,27 +60,27 @@ export class CartComponent implements OnInit {
     while (j < this.cartContentKeys.length) 
     {
       console.log(this.cartContentKeys[j]);
-      console.log(JSON.parse(localStorage.getItem(this.cartContentKeys[j])));
-      this.cartContent.push(JSON.parse(localStorage.getItem(this.cartContentKeys[j])))
- 
-     // this.cartContent[0].category.name
-
+      console.log(JSON.parse(this.deviceType.getItem(this.cartContentKeys[j])));
+      this.cartContent.push(JSON.parse(this.deviceType.getItem(this.cartContentKeys[j])))
+      
       // console.log(JSON.parse(localStorage.getItem(this.cartContentKeys[j])).category.course.urlToImage);
+
       j++
     }
-   
-         console.log(JSON.stringify(this.cartContent[0].name));
-    
-    // for (let i = 0; i < this.localStorageLength; i++) 
-    // {
-    //   console.log("id" + i);
-    //   console.log(JSON.parse(localStorage.getItem('course' + i + 'id')));
-    //   var a = (JSON.parse(localStorage.getItem('course' + i + 'id')))
-    //   console.log(a.id);
-      
-    //   //localStorage.setItem("boughtCourseId", "1")
-    // }
+    console.log(this.cartContent);
   }
+
+  async buyCourse()
+    {
+      for (let i = 0; i < this.cartContent.length; i++) 
+      {
+        await this.deviceType.setItem('BU_' + JSON.stringify(this.cartContent[i].name), JSON.stringify(this.cartContent[i]))
+      }
+      this.cartContentKeys.forEach(key => 
+        {
+          this.deviceType.removeItem(key);
+      });
+    }
 
   close()
   {

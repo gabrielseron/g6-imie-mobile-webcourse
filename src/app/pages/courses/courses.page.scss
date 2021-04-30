@@ -8,13 +8,11 @@ ion-header
     ion-toolbar
     {
         --border-style: none;
-        padding: 2vw 2vw 0 0;
-        ion-searchbar
+        padding: 2vw 2vw 0 2vw;
+        ion-title
         {
-            padding: 0 5vw;
-            --border-radius: 15vw;
-            --placeholder-color: #0094fc;
-            font-family: poppins-medium;
+            font-family: poppins-semibold;
+            font-size: large;
         }
         ion-buttons
         {

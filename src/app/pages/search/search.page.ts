@@ -18,6 +18,7 @@ export class SearchPage implements OnInit {
  
   feeds: CourseFeed[];
   themes:ThemesFeed[];
+  deviceType;
    //a mettre sur la page d'achat des cours
   //cart=[];
   //cartItemCount: BehaviorSubject<number>;
@@ -28,6 +29,7 @@ export class SearchPage implements OnInit {
 
 
   async ngOnInit() {
+    this.findDeviceType()
     this.themes = await this.feed.getThemeBJson()
     this.feeds = await this.feed.getDataBJson()
   }
@@ -46,7 +48,16 @@ export class SearchPage implements OnInit {
     }
   }
 
-
+  findDeviceType()
+  {
+    if (this.platform.is("desktop"))
+      {
+        this.deviceType = localStorage
+      } else
+      {
+        this.deviceType = this.storage
+      }
+  }
  
 
 //get json data
@@ -85,7 +96,7 @@ iontheme() {
   async addToCart(id: number)
   {
     
-    await localStorage.setItem('TB_' + JSON.stringify(this.feeds[0].name), JSON.stringify(this.feeds[0]))
-    await localStorage.setItem('TB_' + JSON.stringify(this.feeds[1].name), JSON.stringify(this.feeds[1]))
+    await this.deviceType.setItem('TB_' + JSON.stringify(this.feeds[id].name), JSON.stringify(this.feeds[0]))
+    await this.deviceType.setItem('TB_' + JSON.stringify(this.feeds[id].name), JSON.stringify(this.feeds[1]))
   }
 }

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="close()">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+    <h1 class="appName gradientText" [innerHTML]="courseName"></h1>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content slot="fixed">
+  <IFRAME class="videoPlayer" preload="metadata" src="https://www.youtube.com/embed/I86ghHn3gBM" controls allowfullscreen></IFRAME>
+  <p [innerHTML]="description"></p>
+</ion-content>
+
+<ion-content class="secondPart">
+  <div>
+    <img src="https://img.youtube.com/vi/I86ghHn3gBM/1.jpg" alt="">
+    <h5 [innerHTML]="title"></h5>
+  </div>
+
+  <div>
+    <img src="https://img.youtube.com/vi/I86ghHn3gBM/1.jpg" alt="">
+    <h5 [innerHTML]="title"></h5>
+  </div>
+
+  <div>
+    <img src="https://img.youtube.com/vi/I86ghHn3gBM/1.jpg" alt="">
+    <h5 [innerHTML]="title"></h5>
+  </div>
+
+  <div>
+    <img src="https://img.youtube.com/vi/I86ghHn3gBM/1.jpg" alt="">
+    <h5 [innerHTML]="title"></h5>
+  </div>
+
+  <div>
+    <img src="https://img.youtube.com/vi/I86ghHn3gBM/1.jpg" alt="">
+    <h5 [innerHTML]="title"></h5>
+  </div>
+
+
+</ion-content>

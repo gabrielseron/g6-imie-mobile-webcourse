@@ -1,1 +1,13 @@
-{}
+{
+  "appId": "com.licorice.cericoil",
+  "appName": "Cericoil",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {},
+  "cordova": {},
+  "server": {
+    "url": "http://192.168.0.24:8101",
+    "cleartext": true
+  }
+}
