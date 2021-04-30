@@ -1,12 +1,46 @@
 <ion-header>
   <ion-toolbar>
-    <ion-searchbar showCancelButton="never" searchIcon="assets/img/search.svg"></ion-searchbar>
+    <ion-searchbar animated (ionChange)="FilterJSONData($event)" searchIcon="assets/img/search.svg"></ion-searchbar>
     <ion-buttons slot="end">
       <ion-icon src='assets/img/shadecart.svg' (click)="displayCart()"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-<!-- search result -->
+<ion-content [fullscreen]="true">
+  <ion-title class="pTheme">Thème pour vous :</ion-title>
+  <ion-row class="theme">
+    <ion-row class="themerow" *ngFor="let theme of themes">
+
+      <ion-col>
+        <p class="nameTheme">{{theme.name}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-row>
+
+  <ion-title classe="title-section">course :</ion-title>
+  <ion-row *ngFor="let feed of feeds">
+
+    <ion-row class="cardCourse">
+
+      <ion-col class="imageCourse">
+        <img [src]="feed.category.course.urlToImage" />
+      </ion-col>
+
+      <ion-col>
+        <p class='titleCourse'>{{feed.nameCourse}}</p>
+      </ion-col>
+      <ion-row>
+        <ion-col>
+          <img class="noteCourse" [src]="feed.category.course.urlNotation" />
+        </ion-col>
+      </ion-row>
+    </ion-row>
+
+  </ion-row>
+
+  <ion-button (click)="addToCart(0)">AAAAAAAAAA</ion-button>
+  <ion-button (click)="addToCart(1)">AAAAAAAAAA</ion-button>
+
+
 </ion-content>

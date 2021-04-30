@@ -2,7 +2,9 @@
 {
     display: none;
 }
-
+.pTheme{
+    font-size: small;
+}
 ion-header
 {
     ion-toolbar
@@ -27,10 +29,84 @@ ion-header
         }
     }
 }
+.cart-lenght
+{
+    color:black;
+    position:absolute;
+    top:18px;
+    left:25px;
+    font-weight: 600;
+    font-size:130px;
+    min-width:25px;
+    z-index:10;
+}
+.theme{
+    margin-top:20px;
+    .themerow
+    {
+        margin-left: 4%;
+        justify-content: center;
+        ion-col{
+           background-color:rgb(235, 235, 235); 
+           margin-right: 6px;
+            height:90%;
+       
+           border-radius: 234PX;
+            .nameTheme{
+           
+
+                font-size:13px;
+                justify-content: center;
+              
+            }  
+        
+        }
+          
+
+        
+    }
+}
 
 
+.title-section
+{
+    margin-top:22%;
+}
+.cardCourse{
+    width:95%;
+    height: auto;
+    font-size:9px;
+    text-align: center;
+    border : 1mm ridge black;
+    margin-top: 6px; 
+    
+    
+    .imageCourse{
+      width:45%;
+      
+      img{
+        width:96%;
+         border-radius: 5%;
+        
+      }
+      height:70px;
 
-
+    }
+}
+.categorieName{
+    font-size: 12px!important;
+   border:2px solid black;
+   width:100%;
+    margin-top: 3%;
+  text-align: center;
+}
+.noteCourse
+{
+    width:20%;
+    margin-top:-256px;
+    margin-left: 55%;
+   
+}
 
 .gradientText
 {

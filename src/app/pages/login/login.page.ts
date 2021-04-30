@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoadingController, ModalController } from '@ionic/angular';
+import { LoadingController, ModalController} from '@ionic/angular';
+import { AuthService } from '../../services/auth.service';
 import { ForgotPasswordComponent } from '../../modals/forgot-password/forgot-password.component';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -10,45 +13,79 @@ import { ForgotPasswordComponent } from '../../modals/forgot-password/forgot-pas
 })
 export class LoginPage implements OnInit 
 {
-
-  email: string = '';
-  pass: string = '';
-
+  userName: string='';
+  mail: string = '';
+  password: string = '';
+  jwt="WhaowMuchKeyVerySecure";
   constructor
   (
     private modal: ModalController,
     private loading: LoadingController,
     private router: Router,
+    private auth: AuthService,
+    private platform: Platform,
+    private storage: NativeStorage,
   ) {}
 
-  ngOnInit() 
+ async ngOnInit() 
   {
-
+    let token;
+        if (this.platform.is("desktop")) {
+            token = localStorage.getItem('token')
+        } else {
+            token = await this.storage.getItem('token')
+        }
+        console.log(token);
+        if (token !== undefined && token !== null)
+            this.router.navigate(['/tab'])
   }
 
+  
   async forgotPassword()
   {
     const modal = await this.modal.create(
       {
       component: ForgotPasswordComponent,
           componentProps: {
-              'emailer': this.email
+              'emailer': this.mail
           }
       });
       return await modal.present();
   }
 
-  async loginForm()
+  async loginForm() 
   {
-    const load = await this.loading.create(
+    const load = await this.loading.create({
+        message: 'Please wait...',
+
+    });
+    await load.present();
+
+    this.auth.login(this.userName,this.password ).then(async(user: any) =>
+    {
+      console.log(this.userName);
+      console.log(this.password);
+      console.log(this.platform.platforms());
+      if (this.platform.is("desktop"))
       {
-      message: 'Please wait...',
-      });
-      await load.present();
-      
-      //api code to connect
-      await this.loading.dismiss();
-      this.router.navigate(['/tab'])
-  }
+        localStorage.setItem('token', user.token)
+        localStorage.setItem('user', JSON.stringify(user.user))
+      } else
+      {
+        await this.storage.setItem('token', user.token)
+        await this.storage.setItem('user', JSON.stringify(user.user))
+      }
+        await this.loading.dismiss();
+
+        this.router.navigate(['/tab'])
+
+    }).catch(async() => {
+        this.userName = ''
+        this.password = '';
+        await this.loading.dismiss();
+        this.router.navigate(['/tab'])
+   })
+}
+
 
 }

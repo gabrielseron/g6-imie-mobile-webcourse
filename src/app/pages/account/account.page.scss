@@ -38,6 +38,19 @@ ion-content
         font-size: xx-large;
         font-family: poppins-semibold;
     }
+    .logout
+    {
+        padding: 0 10%;
+        --background: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297);
+        --background-hover: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297);
+        --background-focused: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297);
+        --background-activated: linear-gradient(to right, #8A04ED, #0073ff, #0094fc, #00a7c4, #00B297);
+        p
+        {
+            color: #ffffff !important;
+            font-family: poppins-semibold;
+        }
+    }
 }
 
 ion-list
@@ -49,6 +62,11 @@ ion-list
     }
 }
 
+.md .androidLetterSpacing
+{
+    letter-spacing: 0;
+    text-transform: capitalize
+}
 
 .gradientText
 {

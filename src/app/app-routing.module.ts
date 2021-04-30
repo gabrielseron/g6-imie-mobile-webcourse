@@ -31,15 +31,23 @@ const routes: Routes = [
     path: 'search',
     loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule)
   },
+ 
   {
     path: 'courses',
     loadChildren: () => import('./pages/courses/courses.module').then( m => m.CoursesPageModule)
   },
+  {
+    path: 'item-details/:gp',
+    loadChildren: () => import('./pages/item-details/item-details.module').then( m => m.ItemDetailsPageModule)
+  },
+
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+   
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+    
   ],
   exports: [RouterModule]
 })

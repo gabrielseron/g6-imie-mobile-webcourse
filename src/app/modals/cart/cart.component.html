@@ -7,7 +7,7 @@
 </ion-header>
 
 
-// Show if isEmptyCart == true
+
 <ion-content [fullscreen]="true">
 
   <ion-row class="container">
@@ -25,9 +25,26 @@
 
 </ion-content>
 
-// Show if isEmptyCart == false
 <ion-content class="hidden">
-  
-  // content of the cart
 
-</ion-content>
+  </ion-content>
+  
+  
+  
+  <ion-footer [fullscreen]="true" class="hidden">
+
+    <ion-row class="toPay">
+      <ion-col>
+        <p>total:</p>
+        <p ></p>
+      </ion-col>
+      <ion-col>
+          <ion-button  size="medium" color="light"(click)="buyCourse()">
+           <p>buy</p>
+          </ion-button>
+        
+      </ion-col>
+    </ion-row>
+    
+  
+  </ion-footer>
