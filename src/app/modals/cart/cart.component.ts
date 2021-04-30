@@ -14,34 +14,58 @@ export class CartComponent implements OnInit {
 
   isCartEmpty: boolean = true;
   private localStorageLength: number
+  public cartContent: object[] =[]
+  public cartContentKeys: string[] =[]
+
   constructor
   (
     private modal: ModalController, private feed: FeedsService, private platform: Platform, private storage: NativeStorage,
   ){ }
 
-  ngOnInit()
+  async ngOnInit()
   {
-    this.getAddedCourses()
+    await this.getAddedCourses()
     //console.log(this.addedCourseList);
   }
 
   getAddedCourses()
   {
     this.localStorageLength = localStorage.length
-    console.log(this.localStorageLength);
-    
-    for (let i = 0; i < this.localStorageLength; i++) 
+    var i: number = 0
+    while (i < this.localStorageLength) 
     {
-      console.log("id" + i);
-      console.log(JSON.parse(localStorage.getItem('course' + i + 'id')));
-      var a = (JSON.parse(localStorage.getItem('course' + i + 'id')))
-      console.log(a.id);
-      
-      //localStorage.setItem("boughtCourseId", "1")
+      console.log(localStorage.key(i));
+      if (localStorage.key(i).startsWith("TB_")) 
+      {
+        this.cartContentKeys.push(localStorage.key(i))
+      }
+      // this.cartContent.push(object)
+      i++
     }
+    console.log(this.cartContentKeys);
+    var j: number = 0
+    while (j < this.cartContentKeys.length) 
+    {
+      console.log(this.cartContentKeys[j]);
+      console.log(JSON.parse(localStorage.getItem(this.cartContentKeys[j])));
+      this.cartContent.push(JSON.parse(localStorage.getItem(this.cartContentKeys[j])))
+      
+      // console.log(JSON.parse(localStorage.getItem(this.cartContentKeys[j])).category.course.urlToImage);
+      j++
+    }
+    console.log(this.cartContent);
+    
+    
+    // for (let i = 0; i < this.localStorageLength; i++) 
+    // {
+    //   console.log("id" + i);
+    //   console.log(JSON.parse(localStorage.getItem('course' + i + 'id')));
+    //   var a = (JSON.parse(localStorage.getItem('course' + i + 'id')))
+    //   console.log(a.id);
+      
+    //   //localStorage.setItem("boughtCourseId", "1")
+    // }
   }
-
-
 
   close()
   {
