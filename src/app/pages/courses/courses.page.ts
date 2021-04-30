@@ -4,6 +4,7 @@ import { CartComponent } from '../../modals/cart/cart.component';
 import { CourseFeed } from '../../interfaces/course-feed';
 import { Platform } from '@ionic/angular';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { CoursePlayerComponent } from '../../modals/course-player/course-player.component';
 
 @Component({
   selector: 'app-courses',
@@ -77,6 +78,15 @@ export class CoursesPage implements OnInit {
     const modal = await this.modal.create(
     {
       component: CartComponent
+    });
+    return await modal.present();
+  }
+
+  async openCourse()
+  {
+    const modal = await this.modal.create(
+    {
+      component: CoursePlayerComponent
     });
     return await modal.present();
   }

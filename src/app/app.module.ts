@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import Cart from 'cart-localstorage'
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 

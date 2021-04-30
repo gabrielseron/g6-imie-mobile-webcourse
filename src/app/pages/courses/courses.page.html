@@ -1,6 +1,8 @@
 <ion-header>
   <ion-toolbar>
-    <ion-searchbar showCancelButton="never" searchIcon="assets/img/search.svg"></ion-searchbar>
+    <ion-title slot="start" class="gradientText">
+      My Account
+    </ion-title>
     <ion-buttons slot="end">
       <ion-icon src='assets/img/shadecart.svg' (click)="displayCart()"></ion-icon>
     </ion-buttons>
@@ -9,4 +11,5 @@
 
 <ion-content>
 <!-- purshased courses list -->
+  <ion-button (click)="openCourse()">aaaaaa</ion-button>
 </ion-content>
