@@ -40,6 +40,7 @@ export class LoginPage implements OnInit
             this.router.navigate(['/tab'])
   }
 
+  
   async forgotPassword()
   {
     const modal = await this.modal.create(
