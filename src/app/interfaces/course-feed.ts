@@ -7,3 +7,6 @@ export interface CourseFeed {
     course?: string
     situation?: number
 }
+export interface ThemesFeed{
+    name?:string
+}
