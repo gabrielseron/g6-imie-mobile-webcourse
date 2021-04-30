@@ -19,6 +19,7 @@ export class CoursesPage implements OnInit {
   public boughtCourses: CourseFeed[] =[]
   public boughtCoursesKeys: string[] =[]
   deviceType;
+  storageKeyCourse;
 
   constructor
   (
@@ -82,11 +83,14 @@ export class CoursesPage implements OnInit {
     return await modal.present();
   }
 
-  async openCourse()
+  async openCourse(storageKeyCourse)
   {
     const modal = await this.modal.create(
     {
-      component: CoursePlayerComponent
+      component: CoursePlayerComponent,
+      componentProps: { 
+        'storageKeyCourse': storageKeyCourse,
+      }
     });
     return await modal.present();
   }
