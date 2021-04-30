@@ -96,7 +96,7 @@ iontheme() {
   async addToCart(id: number)
   {
     
-    await this.deviceType.setItem('TB_' + JSON.stringify(this.feeds[0].name), JSON.stringify(this.feeds[0]))
-    await this.deviceType.setItem('TB_' + JSON.stringify(this.feeds[1].name), JSON.stringify(this.feeds[1]))
+    await this.deviceType.setItem('TB_' + JSON.stringify(this.feeds[id].name), JSON.stringify(this.feeds[0]))
+    await this.deviceType.setItem('TB_' + JSON.stringify(this.feeds[id].name), JSON.stringify(this.feeds[1]))
   }
 }
